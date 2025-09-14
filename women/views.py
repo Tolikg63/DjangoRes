@@ -4,3 +4,7 @@ from django.shortcuts import render
 
 def index(request):
     return HttpResponse("Hi Django")
+
+
+def categories(request):
+    return HttpResponse("<h1>Categories page</h1>")
