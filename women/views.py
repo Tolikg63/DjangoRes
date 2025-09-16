@@ -17,7 +17,9 @@ menu = ['Burger', 'Pizza', 'Sushi', 'PhoBo']
 
 def about(request):
     data = {
-        'title': menu
+        'title': menu,
+        'number': 10,
+        'about': 'about'
     }
     return render(request, 'about.html', data)
 
