@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Main Page {% endblock %}
+{% block content %}
    <p>Main Page from {{ title }}</p>
 
-   <ol>
-      {% for menu in menu %}
-      <li>
-         <a href="{% url menu.user_title %}">{{ menu.title }}</a>
-      </li>
-      {% endfor %}
-   </ol>
+   {% include 'includes/menu_bar.html' %}
    <ol>
       {% for user in users %}
          {% if user.is_published %}
@@ -27,5 +16,4 @@
          {% endif %}
       {% endfor %}
    </ol>
-</body>
-</html>
+{% endblock %}

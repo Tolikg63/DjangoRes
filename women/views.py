@@ -24,7 +24,7 @@ def index(request):
     # t = render_to_string('index.html')
     # return HttpResponse(t)
     data = {
-        'menu': menu_list,
+        'title': menu_list,
         'users': data_db
     }
     return render(request, 'index.html', data)
