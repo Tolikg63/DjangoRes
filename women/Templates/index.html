@@ -6,6 +6,17 @@
    <title>{{ title }}</title>
 </head>
 <body>
-   Main Page from {{ title }}
+   <p>Main Page from {{ title }}</p>
+   <ol>
+      {% for user in users %}
+         {% if user.is_published %}
+         <li>{{ user.name }} - {{ user.age }}
+         {% if not forloop.last %}
+         <hr>
+         {% endif %}
+         </li>
+         {% endif %}
+      {% endfor %}
+   </ol>
 </body>
 </html>
