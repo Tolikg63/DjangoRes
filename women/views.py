@@ -4,8 +4,22 @@ from django.template.loader import render_to_string
 
 
 def index(request):
-    t = render_to_string('index.html')
-    return HttpResponse(t)
+    # t = render_to_string('index.html')
+    # return HttpResponse(t)
+    data = {
+        'title': 'Main page from the data'
+    }
+    return render(request, 'index.html', data)
+
+
+menu = ['Burger', 'Pizza', 'Sushi', 'PhoBo']
+
+
+def about(request):
+    data = {
+        'title': menu
+    }
+    return render(request, 'about.html', data)
 
 
 def categories(request, cat_id):
