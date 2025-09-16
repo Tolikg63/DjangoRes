@@ -7,10 +7,19 @@
 </head>
 <body>
    <p>Main Page from {{ title }}</p>
+
+   <ol>
+      {% for menu in menu %}
+      <li>
+         <a href="{% url menu.user_title %}">{{ menu.title }}</a>
+      </li>
+      {% endfor %}
+   </ol>
    <ol>
       {% for user in users %}
          {% if user.is_published %}
          <li>{{ user.name }} - {{ user.age }}
+            <p><a href="{% url 'post' user.id %}">Read more</a></p>
          {% if not forloop.last %}
          <hr>
          {% endif %}
